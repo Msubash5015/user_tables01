@@ -1,0 +1,46 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Company Name</th>
+      <th>Designation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- <tr>
+      <th>
+        <input type="text" name="search" placeholder="Search.." />
+      </th>
+      <th><input type="text" name="search" placeholder="Search.." /></th>
+      <th><input type="text" name="search" placeholder="Search.." /></th>
+    </tr> -->
+    <tr>
+      <th>
+        <input
+          type="text"
+          [(ngModel)]="searchTerms.name"
+          placeholder="Search Name.."
+        />
+      </th>
+      <th>
+        <input
+          type="text"
+          [(ngModel)]="searchTerms.company"
+          placeholder="Search Company.."
+        />
+      </th>
+      <th>
+        <input
+          type="text"
+          [(ngModel)]="searchTerms.designation"
+          placeholder="Search Designation.."
+        />
+      </th>
+    </tr>
+    <tr *ngFor="let user of filteredUsers">
+      <td>{{ user.name }}</td>
+      <td>{{ user.company.name }}</td>
+      <td>{{ user.company.designation }}</td>
+    </tr>
+  </tbody>
+</table>
